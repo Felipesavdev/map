@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import './App.css'
 
 
@@ -42,22 +42,27 @@ function App() {
     }
   ]
 
-  return (
-    <>
-    
+  return ( 
+    <div className='container'>
+      <div className='list-card'>
       {
         skins.map(item => {
           return (
-            <div>
-              {/* <img src={require('../src/assets/images/skins/ak-vulcan.jpg')} /> */}
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-              <p>{item.wear}</p>
+          <div className='card'>
+            <div className='img'>
+              <img width='100%' src={`./src/assets/images/skins/${item.image}.jpg`} />
             </div>
+              <div className='infos'>
+                <p>{item.name}</p>
+                <p>{item.price}</p>
+                <p>{item.wear}</p>
+              </div>
+          </div>
           )
         })
       }
-    </>
+    </div>
+    </div>
   )
 }
 
